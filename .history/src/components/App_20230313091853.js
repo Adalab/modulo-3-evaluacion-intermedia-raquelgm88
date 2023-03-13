@@ -6,14 +6,8 @@ function App() {
 
   //Variables de estado
   const [data, setData] = useState(quotes);
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState()
   
-  //Funciones
-  const renderList = () => {
-    return data.map ((eachQuote, index) => {
-     return <li key={index} className="quote__item">{eachQuote.quote} - {eachQuote.character}</li>
-    })
-  }
 
   return (
   <div className="App">
@@ -23,10 +17,10 @@ function App() {
     <main>
       <form>
         <label htmlFor="search">Filtar por frase </label>
-        <input className="" type="search" name="search"  autoComplete='off' value={search}  />
+        <input className="" type="search" name="search"  autoComplete='off' value={}  />
       </form>
       <ul>
-        {renderList()}
+        <li>Pivot! Pivot! Pivot! Pivot! Pivot! - Ross</li>
       </ul>
     </main>
   </div>

@@ -10,7 +10,7 @@ function App() {
   
   //Funciones
   const renderList = () => {
-    return data.map ((eachQuote, index) => {
+    data.map ((eachQuote, index) => {
      return <li key={index} className="quote__item">{eachQuote.quote} - {eachQuote.character}</li>
     })
   }
@@ -23,7 +23,7 @@ function App() {
     <main>
       <form>
         <label htmlFor="search">Filtar por frase </label>
-        <input className="" type="search" name="search"  autoComplete='off' value={search}  />
+        <input className="" type="search" name="search"  autoComplete='off' value={}  />
       </form>
       <ul>
         {renderList()}

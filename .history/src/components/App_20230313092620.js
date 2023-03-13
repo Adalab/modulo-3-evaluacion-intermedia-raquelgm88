@@ -10,7 +10,7 @@ function App() {
   
   //Funciones
   const renderList = () => {
-    return data.map ((eachQuote, index) => {
+    data.map ((eachQuote, index) => {
      return <li key={index} className="quote__item">{eachQuote.quote} - {eachQuote.character}</li>
     })
   }
