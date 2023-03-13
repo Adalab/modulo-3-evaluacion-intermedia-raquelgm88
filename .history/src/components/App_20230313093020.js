@@ -10,16 +10,12 @@ function App() {
   
   //Funciones
   const renderList = () => {
-    return data.filter((eachQuote) => {
-      return eachQuote.quote.toLowerCase().includes(search.toLowerCase());
-    }).map ((eachQuote, index) => {
+    return data.map ((eachQuote, index) => {
      return <li key={index} className="quote__item">{eachQuote.quote} - {eachQuote.character}</li>
     })
   }
 
-  const handleFilter = (event) => {
-    setSearch(event.target.value);
-  }
+  const handleFilter = (event)
 
   return (
   <div className="App">
@@ -29,7 +25,7 @@ function App() {
     <main>
       <form>
         <label htmlFor="search">Filtar por frase </label>
-        <input className="" type="search" name="search"  autoComplete='off' onInput={handleFilter} value={search}  />
+        <input className="" type="search" name="search"  autoComplete='off' value={search}  />
       </form>
       <ul>
         {renderList()}
