@@ -8,17 +8,11 @@ function App() {
   const [data, setData] = useState(quotes);
   const [search, setSearch] = useState('');
   const [character, setCharacter] = useState('Todos');
-
+  
   //Funciones
   const renderList = () => {
     return data.filter((eachQuote) => {
       return eachQuote.quote.toLowerCase().includes(search.toLowerCase());
-    }).filter((eachQuote) => {
-      if (character.toLowerCase() === "todos") {
-        return true;
-      } else {
-        return eachQuote.character.toLowerCase().includes(character.toLowerCase());
-      }
     }).map ((eachQuote, index) => {
      return <li key={index} className="quote__item">{eachQuote.quote} - {eachQuote.character}</li>
     })
