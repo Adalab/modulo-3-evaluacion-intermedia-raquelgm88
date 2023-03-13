@@ -2,9 +2,6 @@ import '../styles/App.scss';
 import quotes from '../data/quotes.json';
 
 function App() {
-
-  
-
   return (
   <div className="App">
     <header>
@@ -13,7 +10,7 @@ function App() {
     <main>
       <form>
         <label htmlFor="search">Filtar por frase </label>
-        <input className="" type="search" name="search"  autoComplete='off' value={}  />
+        <input type="search" name="search"  autoComplete='off'  />
       </form>
       <ul>
         <li>Pivot! Pivot! Pivot! Pivot! Pivot! - Ross</li>
