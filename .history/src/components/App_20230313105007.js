@@ -57,13 +57,8 @@ function App() {
         {renderList()}
       </ul>
       <form action="">
-        <h2>Añadir una nueva frase</h2>
-        <label htmlFor="quote">Frase</label>
-        <input type="text" name="newQuote"
-        id="newQuote"/>
-        <label htmlFor="newCharacter">Personaje</label>
-        <input type="text" name="newCharacter" id="newCharacter"/>
-        <input type="submit" value="Añadir una nueva frase" />
+        <legend>Añadir una nueva frase</legend>
+        <label htmlFor="">Frase</label>
       </form>
     </main>
   </div>

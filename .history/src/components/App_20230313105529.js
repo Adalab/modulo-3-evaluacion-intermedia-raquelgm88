@@ -63,7 +63,7 @@ function App() {
         id="newQuote"/>
         <label htmlFor="newCharacter">Personaje</label>
         <input type="text" name="newCharacter" id="newCharacter"/>
-        <input type="submit" value="Añadir una nueva frase" />
+        input
       </form>
     </main>
   </div>

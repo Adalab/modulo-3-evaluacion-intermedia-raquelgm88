@@ -41,7 +41,7 @@ function App() {
       <form>
         <label htmlFor="search">Filtar por frase </label>
         <input className="" type="search" name="search"  autoComplete='off' onInput={handleFilter} value={search}  />
-        <label htmlFor="character">Filtrar por personaje</label>
+        <label htmlFor="">Filtrar por personaje</label>
         <select name="character" id="character" onChange={handleCharacter}>
           <option value="todos">Todos</option>
           <option value="Ross">Ross</option>
@@ -57,13 +57,7 @@ function App() {
         {renderList()}
       </ul>
       <form action="">
-        <h2>Añadir una nueva frase</h2>
-        <label htmlFor="quote">Frase</label>
-        <input type="text" name="newQuote"
-        id="newQuote"/>
-        <label htmlFor="newCharacter">Personaje</label>
-        <input type="text" name="newCharacter" id="newCharacter"/>
-        <input type="submit" value="Añadir una nueva frase" />
+        <legend></legend>
       </form>
     </main>
   </div>
