@@ -1,15 +1,22 @@
 import '../styles/App.scss';
-import quotes from '../data/quotes.json';
-import { useState } from 'react';
+//import quotes from '../data/quotes.json';
+import callToApi from '../services/api';
+import { useState, useEffect } from 'react';
 
 function App() {
 
   //Variables de estado
-  const [data, setData] = useState(quotes);
+  const [data, setData] = useState([]);
   const [search, setSearch] = useState('');
   const [character, setCharacter] = useState('Todos');
 
   //Funciones
+  useEffect(() => {
+    callToApi().then((response) => {
+      setData(response);
+    });
+  }, []);
+
   const renderList = () => {
     return data.filter((eachQuote) => {
       return eachQuote.quote.toLowerCase().includes(search.toLowerCase());
