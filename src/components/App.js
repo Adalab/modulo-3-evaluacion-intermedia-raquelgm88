@@ -9,6 +9,11 @@ function App() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState('');
   const [character, setCharacter] = useState('Todos');
+  const [newQuote, setNewQuote] = useState({
+    quote: '',
+    character: ''
+  });
+  const [requestMessage, setRequestMessage] = useState('');
 
   //Funciones
   useEffect(() => {
@@ -39,6 +44,27 @@ function App() {
     setCharacter(event.target.value);
   }
 
+  const handleNewQuote = (event) => {
+    const inputValue = event.target.value;
+    const inputName = event.target.name;
+    setNewQuote({...newQuote, [inputName]: inputValue});
+    setRequestMessage('');
+  };
+
+  const handleCreateQuote = (event) => {
+    event.preventDefault();
+    if (newQuote.quote === '' || newQuote.character === '') {
+      setRequestMessage('Rellene todos los campos');
+    }else{
+    setData([...data, newQuote]);
+    setNewQuote({
+      quote: '',
+      character: ''
+    });
+    setRequestMessage('');
+  }
+  };
+
   return (
   <div className="App">
     <header>
@@ -66,11 +92,12 @@ function App() {
       <form action="">
         <h2>Añadir una nueva frase</h2>
         <label htmlFor="quote">Frase</label>
-        <input type="text" name="newQuote"
-        id="newQuote"/>
-        <label htmlFor="newCharacter">Personaje</label>
-        <input type="text" name="newCharacter" id="newCharacter"/>
-        <input type="submit" value="Añadir una nueva frase" />
+        <input required type="text" name="quote"
+        id="quote" value={newQuote.quote} onInput={handleNewQuote}/>
+        <label htmlFor="character">Personaje</label>
+        <input required type="text" name="character" id="character" value={newQuote.character} onInput={handleNewQuote}/>
+        <input type="submit" value="Añadir una nueva frase" onClick={handleCreateQuote}/>
+        <p>{requestMessage}</p>
       </form>
     </main>
   </div>
