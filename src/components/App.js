@@ -13,7 +13,7 @@ function App() {
     quote: '',
     character: ''
   });
-  const [requestMessage, setRequestMessage] = useState('');
+  const [requestMessage, setRequestMessage] = useState('hidden');
 
   //Funciones
   useEffect(() => {
@@ -48,20 +48,20 @@ function App() {
     const inputValue = event.target.value;
     const inputName = event.target.name;
     setNewQuote({...newQuote, [inputName]: inputValue});
-    setRequestMessage('');
+    setRequestMessage('hidden');
   };
 
   const handleCreateQuote = (event) => {
     event.preventDefault();
     if (newQuote.quote === '' || newQuote.character === '') {
-      setRequestMessage('Rellene todos los campos');
+      setRequestMessage('');
     }else{
     setData([...data, newQuote]);
     setNewQuote({
       quote: '',
       character: ''
     });
-    setRequestMessage('');
+    setRequestMessage('hidden');
   }
   };
 
@@ -97,7 +97,7 @@ function App() {
         <label htmlFor="character">Personaje</label>
         <input required type="text" name="character" id="character" value={newQuote.character} onInput={handleNewQuote}/>
         <input type="submit" value="Añadir una nueva frase" onClick={handleCreateQuote}/>
-        <p>{requestMessage}</p>
+        <p className={requestMessage}>*Rellene todos los campos</p>
       </form>
     </main>
   </div>
