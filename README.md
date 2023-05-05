@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+![Friends Best Quotes](https://raw.githubusercontent.com/raquelgm88/friends-best-quotes/main/src/images/friends.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Buscador de frases de la serie Friends
 
-## Available Scripts
+¡Hola! esta aplicación web es el resultado del ejercicio de evaluación intermedia del módulo tres del **bootcamp de Programación Web** de **Adalab**, de la promoción **Salas**.
 
-In the project directory, you can run:
+## En qué consiste
 
-### `npm start`
+Vamos a recordar la serie de televisión "Friends", y vamos a hacer una aplicación que nos permita gestionar la frases de los personajes de esta serie, y lo vamos a hacer con React.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Requisitos
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Pintar el listado de frases
 
-### `npm test`
+Para empezar el ejercicio queremos:
+  1. Pintar una cabecera con un título que ponga Frases de Friends.
+  2. Pintar el listado de frases inicial. Para ello utilizaremos un API que facilitaremos.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Primero hay que copiar el contenido del API y pegarlo en un fichero json del proyecto. Utilizar ese fichero para "simular" que ya tenemos los datos sin traerlos del servidor. De momento lo importarlo en el componente App y lo guardarlo en el estado.
 
-### `npm run build`
+Más adelante  hay que encargarse del fetch(). Este paso es opcional, y lo que se desea es que hacer la petición a la API con un fetch desde React.
+Después, generar el HTML de la página con los datos que se han importado del json.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Filtrar el listado de frases
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+A continuación queremos filtrar por la frase y por personaje. Intenta hacer uno de los dos y, cuando lo tengas controlado, implementa el restante. Para ello:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Para filtrar por frase:
 
-### `npm run eject`
+  1. Añade un recuadro sobre el listado de frases donde el usuario pueda escribir texto.
+  2. Añade la funcionalidad para que, cuando la usuaria escriba en ese **<input>**, el listado de frases se repinte mostrando solo las que incluyan el texto que ha escrito el usuario (aplicando también el filtrado por personaje, si ya lo tuvieras implementado).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Para filtrar por personaje:
+  
+  1. Añade un select a la cabecera que tenga las siguientes opciones:
+    - Todos
+    - Ross
+    - Monica
+    - Joey
+    - Phoebe
+    - Chandler
+    - Rachel
+ 
+  2. Añade la funcionalidad para que cuando el usuario cambie este select el listado de frases se repinte mostrando solo los que coincidan con la opción seleccionada.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Añadir una nueva frase (BONUS)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+A continuación queremos añadir un nueva frase. Para ello:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+  1. Crear un formulario con los campos:
+    - Frase
+    - Personaje
+    - Un botón para **Añadir la nueva frase**.
+    
+  2. Cuando el usuario pulse en el botón hay que añadir la frase al listado de frases para que este aparezca en el listado.
+  
+## Herramientas utilizadas
 
-## Learn More
+- HTML5
+- CSS3, SCSS
+- React JS
+- npm
+- NodeJS
+- Gulp
+- Git
+- API:
+  - https://beta.adalab.es/curso-intensivo-fullstack-recursos/apis/quotes-friends-tv-v1/quotes.json
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Cómo arrancar el proyecto
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Necesitas tener instalado [Node JS](https://nodejs.org/en) para poder arrancar este proyecto.
 
-### Code Splitting
+1. Instala las dependecias locales ejecutando en la terminal el comando:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+npm install
+```
 
-### Analyzing the Bundle Size
+2. Instala el paquete para SASS:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+npm install node-sass
+```
 
-### Making a Progressive Web App
+5. Arranca el proyecto ejecutando a continuación en la terminal:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```
+npm start
+```
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Se abrirá [http://localhost:3000 ](http://localhost:3000)para ver el proyecto en el navegador en modo desarrollo.
