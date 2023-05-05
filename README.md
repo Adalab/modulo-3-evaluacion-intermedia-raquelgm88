@@ -8,7 +8,7 @@ Vamos a recordar la serie de televisión "Friends", y vamos a hacer una aplicaci
 
 ## Requisitos
 
-1. Pintar el listado de frases
+### 1. Pintar el listado de frases
 
 Para empezar el ejercicio queremos:
   1. Pintar una cabecera con un título que ponga Frases de Friends.
@@ -19,7 +19,7 @@ Primero hay que copiar el contenido del API y pegarlo en un fichero json del pro
 Más adelante  hay que encargarse del fetch(). Este paso es opcional, y lo que se desea es que hacer la petición a la API con un fetch desde React.
 Después, generar el HTML de la página con los datos que se han importado del json.
 
-2. Filtrar el listado de frases
+### 2. Filtrar el listado de frases
 
 A continuación queremos filtrar por la frase y por personaje. Intenta hacer uno de los dos y, cuando lo tengas controlado, implementa el restante. Para ello:
 
@@ -41,7 +41,7 @@ Para filtrar por personaje:
  
   2. Añade la funcionalidad para que cuando el usuario cambie este select el listado de frases se repinte mostrando solo los que coincidan con la opción seleccionada.
 
-3. Añadir una nueva frase (BONUS)
+### 3. Añadir una nueva frase (BONUS)
 
 A continuación queremos añadir un nueva frase. Para ello:
 
