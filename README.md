@@ -1,5 +1,3 @@
-![Friends Best Quotes](https://raw.githubusercontent.com/raquelgm88/friends-best-quotes/main/src/images/friends.png)
-
 # Buscador de frases de la serie Friends
 
 ¡Hola! esta aplicación web es el resultado del ejercicio de evaluación intermedia del módulo tres del **bootcamp de Programación Web** de **Adalab**, de la promoción **Salas**.
