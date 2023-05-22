@@ -2,6 +2,7 @@ import '../styles/App.scss';
 //import quotes from '../data/quotes.json';
 import callToApi from '../services/api';
 import { useState, useEffect } from 'react';
+import friends from '../images/friends.png';
 
 function App() {
 
@@ -32,7 +33,9 @@ function App() {
         return eachQuote.character.toLowerCase().includes(character.toLowerCase());
       }
     }).map ((eachQuote, index) => {
-     return <li key={index} className="main__ul_quote">{eachQuote.quote} - {eachQuote.character}</li>
+     return <li key={index} className="main__ul_one">
+      <div className="main__ul_one-quote">{eachQuote.quote}</div>
+      <div className="main__ul_one-character">{eachQuote.character}</div></li>
     })
   }
 
@@ -68,7 +71,7 @@ function App() {
   return (
   <div className="App">
     <header className='header'>
-      <h1 className='header__title'>Frases de Friends</h1>
+      <img src={friends} alt="Friends" className='header__logo' />
     </header>
     <main className='main'>
       <form className='main__form'>
@@ -76,7 +79,7 @@ function App() {
         <input className="main__form_input" type="search" name="search"  autoComplete='off' onInput={handleFilter} value={search}  />
         <label className='main__form_label' htmlFor="character">Filtrar por personaje</label>
         <select className='main__form_select' name="character" id="character" onChange={handleCharacter}>
-          <option className='main__form_select-option' value="todos">Todos</option>
+          <option value="todos">Todos</option>
           <option value="Ross">Ross</option>
           <option value="Monica">Monica</option>
           <option value="Joey">Joey</option>
@@ -92,11 +95,11 @@ function App() {
       <form className='main__form2' action="">
         <h2 className='main__form2_title'>Añadir una nueva frase</h2>
         <label className='main__form2_label' htmlFor="quote">Frase</label>
-        <input className='main__form2_quote' required type="text" name="quote"
+        <input className='main__form2_input' required type="text" name="quote"
         id="quote" value={newQuote.quote} onInput={handleNewQuote}/>
         <label className='main__form2_label' htmlFor="character">Personaje</label>
-        <input className='main__form2_character' required type="text" name="character" id="character" value={newQuote.character} onInput={handleNewQuote}/>
-        <input className='main__form2_submit' type="submit" value="Añadir una nueva frase" onClick={handleCreateQuote}/>
+        <input className='main__form2_input' required type="text" name="character" id="character" value={newQuote.character} onInput={handleNewQuote}/>
+        <input className='main__form2_submit' type="submit" value="Añadir" onClick={handleCreateQuote}/>
         <p className={requestMessage}>*Rellene todos los campos</p>
       </form>
     </main>

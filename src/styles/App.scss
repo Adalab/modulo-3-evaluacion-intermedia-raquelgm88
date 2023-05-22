@@ -1,14 +1,19 @@
+.App{
+    background-color: black;
+    height: 100%;
+    width: 100%;
+}
+
 .header {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 60px;
-    background-color: aqua;
 
-    &__title {
-        font-size: 40px;
-        font-family: "Caveat", sans-serif;
+    &__logo {
+        height: 150%;
+        margin-top: 30px;
     }
 }
 
@@ -27,12 +32,14 @@
         &_label {
             font-family: "Jost", sans-serif;
             font-size: 18px;
+            color: rgb(201, 24, 24);
         }
 
         &_input {
             width: 85vw;
             height: 30px;
             margin-bottom: 20px;
+            background-color: whitesmoke;
         }
 
         &_select {
@@ -41,12 +48,93 @@
             margin-bottom: 20px;
             font-family: "Jost", sans-serif;
             font-size: 16px;
+            background-color: whitesmoke;
 
-            &-option {
-                font-family: "Jost", sans-serif;
-                font-size: 16px;
+        }
+    }
+
+    &__ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        margin-top: 30px;
+
+        &_one {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 90vw;
+            border: solid 2px #74BDED;
+            margin-bottom: 10px;
+
+            &-quote {
+                width: 77vw;
+                height: auto;
+                padding: 10px;
+                font-size: 20px;
+                font-family: "Caveat", sans-serif;
+                color: white;
+                border: solid 1px #74BDED;
+            }
+
+            &-character {
+                width: 23vw;
+                height: auto;
+                font-size: 20px;
+                font-family: "Caveat", sans-serif;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
             }
         }
+    }
+
+    &__form2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 35px;
+        //margin-left: 30px;
+
+        &_title {
+            font-family: "Jost", sans-serif;
+            font-size: 25px;
+            color: #E5D811;
+            margin-bottom: 15px;
+        }
+
+        &_label {
+            font-family: "Jost", sans-serif;
+            font-size: 18px;
+            color: rgb(201, 24, 24);
+            align-self: flex-start;
+            margin-top: 5px;
+            margin-left: 25px;
+        
+        }
+
+        &_input {
+            width: 85vw;
+            height: 30px;
+            margin-bottom: 20px;
+            background-color: whitesmoke;
+        }
+
+        &_submit {
+            border: none;
+            font-family: "Jost", sans-serif;
+            font-size: 16px;
+            padding: 5px;
+            margin-bottom: 60px;
+        }
+
+
+
     }
 }
 
