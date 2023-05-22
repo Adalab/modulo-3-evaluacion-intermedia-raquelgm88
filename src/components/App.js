@@ -32,7 +32,7 @@ function App() {
         return eachQuote.character.toLowerCase().includes(character.toLowerCase());
       }
     }).map ((eachQuote, index) => {
-     return <li key={index} className="quote__item">{eachQuote.quote} - {eachQuote.character}</li>
+     return <li key={index} className="main__ul_quote">{eachQuote.quote} - {eachQuote.character}</li>
     })
   }
 
@@ -54,7 +54,7 @@ function App() {
   const handleCreateQuote = (event) => {
     event.preventDefault();
     if (newQuote.quote === '' || newQuote.character === '') {
-      setRequestMessage('');
+      setRequestMessage('visible');
     }else{
     setData([...data, newQuote]);
     setNewQuote({
@@ -67,16 +67,16 @@ function App() {
 
   return (
   <div className="App">
-    <header>
-      <h1>Frases de Friends</h1>
+    <header className='header'>
+      <h1 className='header__title'>Frases de Friends</h1>
     </header>
-    <main>
-      <form>
-        <label htmlFor="search">Filtar por frase </label>
-        <input className="" type="search" name="search"  autoComplete='off' onInput={handleFilter} value={search}  />
-        <label htmlFor="character">Filtrar por personaje</label>
-        <select name="character" id="character" onChange={handleCharacter}>
-          <option value="todos">Todos</option>
+    <main className='main'>
+      <form className='main__form'>
+        <label className='main__form_label' htmlFor="search">Filtrar por frase </label>
+        <input className="main__form_input" type="search" name="search"  autoComplete='off' onInput={handleFilter} value={search}  />
+        <label className='main__form_label' htmlFor="character">Filtrar por personaje</label>
+        <select className='main__form_select' name="character" id="character" onChange={handleCharacter}>
+          <option className='main__form_select-option' value="todos">Todos</option>
           <option value="Ross">Ross</option>
           <option value="Monica">Monica</option>
           <option value="Joey">Joey</option>
@@ -86,17 +86,17 @@ function App() {
 
         </select>
       </form>
-      <ul>
+      <ul className='main__ul'>
         {renderList()}
       </ul>
-      <form action="">
-        <h2>Añadir una nueva frase</h2>
-        <label htmlFor="quote">Frase</label>
-        <input required type="text" name="quote"
+      <form className='main__form2' action="">
+        <h2 className='main__form2_title'>Añadir una nueva frase</h2>
+        <label className='main__form2_label' htmlFor="quote">Frase</label>
+        <input className='main__form2_quote' required type="text" name="quote"
         id="quote" value={newQuote.quote} onInput={handleNewQuote}/>
-        <label htmlFor="character">Personaje</label>
-        <input required type="text" name="character" id="character" value={newQuote.character} onInput={handleNewQuote}/>
-        <input type="submit" value="Añadir una nueva frase" onClick={handleCreateQuote}/>
+        <label className='main__form2_label' htmlFor="character">Personaje</label>
+        <input className='main__form2_character' required type="text" name="character" id="character" value={newQuote.character} onInput={handleNewQuote}/>
+        <input className='main__form2_submit' type="submit" value="Añadir una nueva frase" onClick={handleCreateQuote}/>
         <p className={requestMessage}>*Rellene todos los campos</p>
       </form>
     </main>
