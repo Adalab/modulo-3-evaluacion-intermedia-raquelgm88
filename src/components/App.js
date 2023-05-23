@@ -93,7 +93,7 @@ function App() {
         {renderList()}
       </ul>
       <form className='main__form2' action="">
-        <h2 className='main__form2_title'>Añadir una nueva frase</h2>
+        <h2 className='main__form2_title'>Añade una nueva frase</h2>
         <label className='main__form2_label' htmlFor="quote">Frase</label>
         <input className='main__form2_input' required type="text" name="quote"
         id="quote" value={newQuote.quote} onInput={handleNewQuote}/>
